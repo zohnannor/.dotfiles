@@ -1,0 +1,46 @@
+# ignore everything by default
+/*
+# but include all .dirs
+!.*
+# except .git stuff
+.cfg/
+.gitignore
+.gitconfig
+
+## explicitly ignored
+
+# sensitive data
+.ssh/
+.supermaven/
+.gnuph/
+.git-credentials
+
+# cache/state
+.cache/
+.npm/
+.local/share/
+.var/
+
+# user data, etc.
+.steam/
+.vscode/
+Desktop/
+Documents/
+Downloads/
+Music/
+Pictures/
+Public/
+Templates/
+Videos/
+
+# projects folder
+dev/
+
+# session data
+.mozilla/
+.config/discord/
+.config/Google/
+.config/docker/config.json
+
+# theme
+!.local/share/plasma/desktoptheme/breeze-alphablack/

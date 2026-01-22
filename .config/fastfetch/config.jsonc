@@ -1,0 +1,43 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "logo": {
+    "padding": {
+      "top": 2
+    }
+  },
+  "display": {},
+  "modules": [
+    "title",
+    "separator",
+    "os",
+    "kernel",
+    "uptime",
+    "processes",
+    "packages",
+    "shell",
+    "lm",
+    "de",
+    "terminalfont",
+    "version",
+    "break",
+    {
+      "type": "board",
+      "key": "MB",
+      "keyIcon": "asd"
+    },
+    "cpu",
+    {
+      "type": "gpu",
+      "hideType": "integrated"
+    },
+    "memory",
+    "disk",
+    {
+      "type": "physicaldisk",
+      "namePrefix": "Samsung"
+    },
+    "monitor",
+    "break",
+    "media"
+  ]
+}

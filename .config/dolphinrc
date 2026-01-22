@@ -1,0 +1,19 @@
+[DetailsMode]
+PreviewSize=22
+
+[General]
+AutoExpandFolders=true
+BrowseThroughArchives=true
+DynamicView=true
+Version=202
+ViewPropsTimestamp=2026,1,15,20,52,37.991
+
+[IconsMode]
+PreviewSize=80
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
+
+[PreviewSettings]
+Plugins=appimagethumbnail,audiothumbnail,glycin-heif,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,fontthumbnail,imagethumbnail,glycin-image-rs,jpegthumbnail,glycin-jxl,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,opendocumentthumbnail,glycin-svg,svgthumbnail
