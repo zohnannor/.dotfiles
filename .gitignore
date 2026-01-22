@@ -44,3 +44,5 @@ dev/
 
 # theme
 !.local/share/plasma/desktoptheme/breeze-alphablack/
+.zcompdump*
+.netrwhist
