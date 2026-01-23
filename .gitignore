@@ -2,10 +2,8 @@
 /*
 # but include all .dirs
 !.*
-# except .git stuff
+# except git repo
 .cfg/
-.gitignore
-.gitconfig
 
 ## explicitly ignored
 
