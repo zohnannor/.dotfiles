@@ -2,7 +2,7 @@
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 # Path to your oh-my-zsh installation.
@@ -97,11 +97,11 @@ fetch_os() { sed -nE 's/PRETTY_NAME="(.+)"/\1/p' /etc/os-release }
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nvim';
+    export EDITOR='nvim';
 elif [[ $(fetch_os distro) = "Arch"* ]]; then
-  export EDITOR='code';
+    export EDITOR='code';
 else
-  export EDITOR='nvim';
+    export EDITOR='nvim';
 fi
 
 # Compilation flags
@@ -136,7 +136,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#aaaaff,bold,underline"
 PS1="%{%F{red}%}%n%{%f%}@%{%F{blue}%}%m %{%F{yellow}%}%~ %{$%f%}%% "
 
 if [[ $(fetch_os distro) = "distro: Arch"* ]] && [ -z $DISPLAY ]; then
-  export DISPLAY="$(tail -1 /etc/resolv.conf | cut -d' ' -f2):0"
+    export DISPLAY="$(tail -1 /etc/resolv.conf | cut -d' ' -f2):0"
 fi
 
 fpath+=~/.zfunc
@@ -158,12 +158,17 @@ compinit -u
 ################################################################################
 
 case $(fetch_os distro) in
-  "distro: Arch"*)
-    xset r rate 300 50
-    ;;
+    "distro: Arch"*)
+        xset r rate 300 50
+        ;;
 esac
 
 source $ZSH/oh-my-zsh.sh
+
+
+# for docker
+export UID
+export GID
 
 export EDITOR=nvim
 alias zshrc="$EDITOR $ZDOTDIR/.zshrc"
@@ -177,40 +182,40 @@ alias exap='exa "$PWD" -lFh@TL 1 --icons --color-scale --group-directories-first
 export BAT_PAGER='less --header=3 --LONG-PROMPT --no-number-headers --status-column -j.5'
 
 rgf() {
-  local query="${1:-}"
-  local initial_cmd="rg --line-number --color=always --smart-case"
+    local query="${1:-}"
+    local initial_cmd="rg --line-number --color=always --smart-case --no-ignore"
 
-  # Get selection from fzf
-  # Use --expect to capture which key was used to exit fzf
-  local out
-  out=$(fzf --ansi \
-        --disabled \
-        --query "$query" \
-        --bind "change:reload:$initial_cmd {q} || true" \
-        --expect=ctrl-v,alt-enter \
-        --delimiter : \
-        --prompt "/.*/ " \
-        --header="Enter: bat; Ctrl+V: VS Code: Alt+Enter: Neovim" \
-        --preview 'bat --color=always --highlight-line {2} {1}' \
-        --preview-window 'right,88,border-left' < /dev/tty)
+    # Get selection from fzf
+    # Use --expect to capture which key was used to exit fzf
+    local out
+    out=$(fzf --ansi \
+          --disabled \
+          --query "$query" \
+          --bind "change:reload:$initial_cmd {q} || true" \
+          --expect=ctrl-v,alt-enter \
+          --delimiter : \
+          --prompt "/.*/ " \
+          --header="Enter: bat; Ctrl+V: VS Code: Alt+Enter: Neovim" \
+          --preview 'bat --color=always --highlight-line {2} {1}' \
+          --preview-window 'right,88,border-left' < /dev/tty)
 
-  # Clear the line and redraw prompt to fix the "new line" issue
-  zle reset-prompt
+    # Clear the line and redraw prompt to fix the "new line" issue
+    zle reset-prompt
 
-  # Extract key pressed and selection
-  local key=$(head -1 <<< "$out")
-  local selection=$(sed '1d' <<< "$out")
+    # Extract key pressed and selection
+    local key=$(head -1 <<< "$out")
+    local selection=$(sed '1d' <<< "$out")
 
-  if [[ -n "$selection" ]]; then
-    local file=$(echo "$selection" | cut -d: -f1)
-    local line=$(echo "$selection" | cut -d: -f2)
+    if [[ -n "$selection" ]]; then
+        local file=$(echo "$selection" | cut -d: -f1)
+        local line=$(echo "$selection" | cut -d: -f2)
 
-    case "$key" in
-      ctrl-v) code -g "$file:$line" ;;
-      alt-enter) nvim "$file" +$line ;;
-      *) BAT_PAGER="${BAT_PAGER:-} +${line}" bat "$file" --highlight-line=${line} ;;
-    esac
-  fi
+        case "$key" in
+            ctrl-v) code -g "$file:$line" ;;
+            alt-enter) nvim "$file" +$line ;;
+            *) BAT_PAGER="${BAT_PAGER:-} +${line}" bat "$file" --highlight-line=${line} ;;
+        esac
+    fi
 }
 zle -N rgf
 bindkey "^F" rgf

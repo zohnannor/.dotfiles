@@ -31,7 +31,6 @@
     "files.exclude": {
         "**/.git": false,
         "**/node_modules": true,
-        "**/target": true
     },
     "breadcrumbs.enabled": true,
     "window.newWindowDimensions": "maximized",
@@ -297,7 +296,7 @@
     ],
     "evenBetterToml.formatter.allowedBlankLines": 1,
     "evenBetterToml.formatter.arrayTrailingComma": true,
-    "evenBetterToml.formatter.columnWidth": 120,
+    "evenBetterToml.formatter.columnWidth": 500,
     "evenBetterToml.formatter.reorderArrays": true,
     "evenBetterToml.formatter.reorderKeys": false,
     "evenBetterToml.formatter.trailingNewline": true,
@@ -340,7 +339,6 @@
     /* SQL */
     "SQL-Formatter-VSCode.expressionWidth": 80,
     "SQL-Formatter-VSCode.keywordCase": "upper",
-    "sql-formatter.uppercase": true,
     "SQL-Formatter-VSCode.dataTypeCase": "upper",
     "SQL-Formatter-VSCode.functionCase": "lower",
     "SQL-Formatter-VSCode.dialect": "postgresql",

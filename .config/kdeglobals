@@ -146,6 +146,9 @@ TerminalService=Alacritty.desktop
 XftHintStyle=hintslight
 XftSubPixel=rgb
 
+[Icons]
+Theme=breeze-dark
+
 [KDE]
 LookAndFeelPackage=org.kde.breezedark.desktop
 ScrollbarLeftClickNavigatesByPage=false
