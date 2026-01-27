@@ -4,6 +4,15 @@ transparent_background_colors = true
 [colors.primary]
 background = "#000000"
 
+[colors.normal]
+black = "#000000"
+
+[colors.bright]
+black = "#000000"
+
+[colors.dim]
+black = "#000000"
+
 [cursor]
 vi_mode_style = "None"
 
