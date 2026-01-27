@@ -4,7 +4,7 @@
     name = zohnannor
     email = zohnannor@gmail.com
 [credential]
-    helper = store
+    helper = store --file ~/.config/git/credentials
 [http]
     version = HTTP/2
     postBuffer = 524288000

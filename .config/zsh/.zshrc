@@ -165,6 +165,7 @@ esac
 
 source $ZSH/oh-my-zsh.sh
 
+eval "$(zoxide init zsh --cmd cd)"
 
 # for docker
 export UID
@@ -175,7 +176,8 @@ alias zshrc="$EDITOR $ZDOTDIR/.zshrc"
 alias ca=cargo
 alias py=python3
 alias ls=exa
-alias G='| rg'
+alias -g G='| rg'
+alias -g NE='2> /dev/null'
 alias pacman="sudo pacman"
 alias exa='exa -lFh@TL 1 --icons --color-scale --group-directories-first --git'
 alias exap='exa "$PWD" -lFh@TL 1 --icons --color-scale --group-directories-first --git'

@@ -19,7 +19,10 @@ export STEAM_CONFIG_HOME="$XDG_CONFIG_HOME/steam"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 export DOTNET_CLI_HOME="$XDG_DATA_HOME/dotnet"
 export PULSE_COOKIE="$XDG_CONFIG_HOME/pulse/cookie"
-export __GL_SHADER_DISK_CACHE_PATH="$XDG_CONFIG_HOME/nv"
+export DOTNET_CLI_HOME="$XDG_DATA_HOME/dotnet"
+export NSS_CONFIG_HOME="$XDG_DATA_HOME/pki"
+export __GL_SHADER_DISK_CACHE_PATH="$XDG_CACHE_HOME/nv"
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 
 # If I will ever need X11 again
 export XAUTHORITY="$XDG_CONFIG_HOME/X11/Xauthority"

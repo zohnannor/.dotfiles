@@ -178,6 +178,7 @@ EnableRemoteFolderThumbnail=false
 MaximumRemoteSize=0
 
 [QtQuickRendererSettings]
+RenderLoop=basic
 SceneGraphBackend=vulkan
 
 [Sounds]
