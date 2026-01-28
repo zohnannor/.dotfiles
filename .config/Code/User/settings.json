@@ -365,7 +365,8 @@
         "cSpell.fixSpellingWithRenameProvider": true,
         "cSpell.advanced.feature.useReferenceProviderWithRename": true,
         "cSpell.advanced.feature.useReferenceProviderRemove": "/^#+\\s/",
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "diffEditor.ignoreTrimWhitespace": false
     },
     "[toml]": {
         "editor.defaultFormatter": "tamasfe.even-better-toml"
@@ -1712,4 +1713,5 @@
     "[properties]": {
         "editor.defaultFormatter": "lumirelle.shell-format-rev"
     },
+    "diffEditor.hideUnchangedRegions.enabled": true,
 }

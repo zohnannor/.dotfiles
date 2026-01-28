@@ -3,20 +3,32 @@ transparent_background_colors = true
 
 [colors.primary]
 background = "#000000"
+foreground = "#c4c7d1"
 
 [colors.normal]
-black = "#000000"
+black = "#323232"
+red = "#FF5370"
+green = "#C3E88D"
+yellow = "#FFCB6B"
+blue = "#82AAFF"
+magenta = "#ff2f90"
+cyan = "#80CBC4"
+white = "#ffffff"
 
 [colors.bright]
-black = "#000000"
-
-[colors.dim]
-black = "#000000"
+red = "#FF5370"
+green = "#C3E88D"
+yellow = "#FFCB6B"
+blue = "#7dc6bf"
+magenta = "#C792EA"
+cyan = "#35434d"
+white = "#ffffff"
 
 [cursor]
 vi_mode_style = "None"
 
 [cursor.style]
+shape = "Beam"
 blinking = "On"
 
 [font.normal]
@@ -26,7 +38,8 @@ family = "Fira Code Nerd Font"
 history = 100000
 
 [window]
-opacity = 1.0
+opacity = 1
+# blur = true
 
 [window.dimensions]
 columns = 130
