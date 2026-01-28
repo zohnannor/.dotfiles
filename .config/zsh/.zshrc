@@ -157,11 +157,11 @@ compinit -u
 
 ################################################################################
 
-case $(fetch_os distro) in
-    "distro: Arch"*)
-        xset r rate 300 50
-        ;;
-esac
+# case $(fetch_os distro) in
+#     "distro: Arch"*)
+#         xset r rate 300 50
+#         ;;
+# esac
 
 source $ZSH/oh-my-zsh.sh
 
@@ -171,16 +171,15 @@ eval "$(zoxide init zsh --cmd cd)"
 export UID
 export GID
 
-export EDITOR=nvim
 alias zshrc="$EDITOR $ZDOTDIR/.zshrc"
 alias ca=cargo
 alias py=python3
-alias ls=exa
+alias ls=eza
 alias -g G='| rg'
 alias -g NE='2> /dev/null'
 alias pacman="sudo pacman"
-alias exa='exa -lFh@TL 1 --icons --color-scale --group-directories-first --git'
-alias exap='exa "$PWD" -lFh@TL 1 --icons --color-scale --group-directories-first --git'
+alias eza='eza -lh@TF -L1 --icons --color-scale --color-scale-mode=fixed --group-directories-first --hyperlink --git'
+alias ezap='eza "$PWD"'
 export BAT_PAGER='less --header=3 --LONG-PROMPT --no-number-headers --status-column -j.5'
 
 rgf() {
