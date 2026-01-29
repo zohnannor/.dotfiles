@@ -1713,5 +1713,4 @@
     "[properties]": {
         "editor.defaultFormatter": "lumirelle.shell-format-rev"
     },
-    "diffEditor.hideUnchangedRegions.enabled": true,
 }
