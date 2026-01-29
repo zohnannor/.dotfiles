@@ -47,7 +47,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -90,11 +90,6 @@ plugins=(
 
 fetch_os() { sed -nE 's/PRETTY_NAME="(.+)"/\1/p' /etc/os-release }
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
     export EDITOR='nvim';
@@ -103,9 +98,6 @@ elif [[ $(fetch_os distro) = "Arch"* ]]; then
 else
     export EDITOR='nvim';
 fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -124,20 +116,13 @@ bindkey  "^L" cls
 
 export TERM=xterm-256color
 
-# vscode shell integration
-# typeset -g POWERLEVEL9K_TERM_SHELL_INTEGRATION=true
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#aaaaff,bold,underline"
+# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8,underline"
 
 # default prompt
 PS1="%{%F{red}%}%n%{%f%}@%{%F{blue}%}%m %{%F{yellow}%}%~ %{$%f%}%% "
-
-if [[ $(fetch_os distro) = "distro: Arch"* ]] && [ -z $DISPLAY ]; then
-    export DISPLAY="$(tail -1 /etc/resolv.conf | cut -d' ' -f2):0"
-fi
 
 fpath+=~/.zfunc
 
@@ -157,12 +142,7 @@ compinit -u
 
 ################################################################################
 
-# case $(fetch_os distro) in
-#     "distro: Arch"*)
-#         xset r rate 300 50
-#         ;;
-# esac
-
+ZSH_DISABLE_COMPFIX="true" # to use same oh-my-zsh as root
 source $ZSH/oh-my-zsh.sh
 
 eval "$(zoxide init zsh --cmd cd)"
@@ -226,7 +206,6 @@ export PATH=$PATH:/usr/bin
 
 POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
 
-ZSH_DISABLE_COMPFIX="true"
 function ipsql() {
     psql "$@" || { pg_ctl -D $PREFIX/var/lib/postgresql restart && psql "$@" }
 }

@@ -447,7 +447,7 @@
     "git-graph.dialog.merge.squashCommits": true,
     "diffEditor.maxComputationTime": 0,
     "diffEditor.experimental.showMoves": true,
-    "diffEditor.ignoreTrimWhitespace": false,
+    "diffEditor.ignoreTrimWhitespace": true,
     "diffEditor.renderSideBySide": true,
     "diffEditor.experimental.useTrueInlineView": true,
     /* DISABLE AI */
