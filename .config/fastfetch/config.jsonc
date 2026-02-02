@@ -1,43 +1,136 @@
 {
-  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
-  "logo": {
-    "padding": {
-      "top": 2
-    }
-  },
-  "display": {},
-  "modules": [
-    "title",
-    "separator",
-    "os",
-    "kernel",
-    "uptime",
-    "processes",
-    "packages",
-    "shell",
-    "lm",
-    "de",
-    "terminalfont",
-    "version",
-    "break",
-    {
-      "type": "board",
-      "key": "MB",
-      "keyIcon": "asd"
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+    "logo": {
+        "source": "arch3",
+        "padding": {
+            "top": 2,
+            "right": 2,
+            "left": 2
+        }
     },
-    "cpu",
-    {
-      "type": "gpu",
-      "hideType": "integrated"
+    "display": {
+        "separator": "",
+        "constants": [
+            "\u001b[90m┃                                          ┃\u001b[42D\u001b[39m"
+        ],
+        "key": {
+            "width": 21
+        }
     },
-    "memory",
-    "disk",
-    {
-      "type": "physicaldisk",
-      "namePrefix": "Samsung"
-    },
-    "monitor",
-    "break",
-    "media"
-  ]
+    "modules": [
+        {
+            "type": "title",
+            "format": "{#90}┏━━━━━━━━━ {user-name-colored}{at-symbol-colored}{host-name-colored}{#90} ━━━━━━━━━━━━━━━━━ arch btw ━┓"
+        },
+        {
+            "type": "os",
+            "key": "{#90}┃ {##FF5370} OS",
+            "format": "{$1}{pretty-name} {#2}{arch}"
+        },
+        {
+            "type": "kernel",
+            "key": "{#90}┃ {##FF7F6B} Kernel",
+            "format": "{$1}{sysname} {#2}{release}"
+        },
+        {
+            "type": "uptime",
+            "key": "{#90}┃ {##FFB06B} Uptime",
+            "format": "{$1}{?days}{days} days, {?}{hours}h {minutes}m {seconds}s {#2}since {boot-time}"
+        },
+        {
+            "type": "processes",
+            "key": "{#90}┃ {##FFCB6B} Processes",
+            "format": "{$1}{}"
+        },
+        {
+            "type": "packages",
+            "key": "{#90}┃ {##E7D97B}󰏖 Packages",
+            "format": "{$1}{all} {#2}(pacman)"
+        },
+        {
+            "type": "shell",
+            "key": "{#90}┃ {##C3E88D}󰐣 Shell",
+            "format": "{$1}{pretty-name} {#2}{version}"
+        },
+        {
+            "type": "lm",
+            "key": "{#90}┃ {##97D389}󰧨 LM",
+            "format": "{$1}{service} ({type}) {#2}{version}"
+        },
+        {
+            "type": "de",
+            "key": "{#90}┃ {##80CBC4} DE",
+            "format": "{$1}{pretty-name} {#2}{version}"
+        },
+        {
+            "type": "terminalfont",
+            "key": "{#90}┃ {##80AACC} Font",
+            "format": "{$1}{name} {#2}{size}, {styles}"
+        },
+        {
+            "type": "terminal",
+            "key": "{#90}┃ {##82AAFF} Terminal",
+            "format": "{$1}{pretty-name} {#2}{version}"
+        },
+        {
+            "type": "cpu",
+            "key": "{#90}┃ {##8F8EEA} CPU",
+            "format": "{$1}{name} {#2}({cores-logical}) @ {freq-max}"
+        },
+        {
+            "type": "gpu",
+            "key": "{#90}┃ {##AC7FEA}󰾲 GPU",
+            "format": "{$1}{vendor} {name} {#2}{dedicated-total}",
+            "hideType": "integrated"
+        },
+        {
+            "type": "memory",
+            "key": "{#90}┃ {##C792EA} Memory",
+            "format": "{$1}{used} / {total} ({percentage})"
+        },
+        {
+            "type": "disk",
+            "key": "{#90}┃ {##E360BD} Disk (/)",
+            "folders": "/",
+            "format": "{$1}{size-used} / {size-total} ({size-percentage}) {#2}{filesystem}"
+        },
+        {
+            "type": "disk",
+            "key": "{#90}┃ {##ff2f90} Disk (/home)",
+            "folders": "/home",
+            "format": "{$1}{size-used} / {size-total} ({size-percentage}) {#2}{filesystem}"
+        },
+        {
+            "type": "physicaldisk",
+            "key": "{#90}┃ {##FF4F78}󰋊 Samsung 980 PRO",
+            "namePrefix": "Samsung",
+            "format": "{$1}{size} {#2}{physical-type} {dev-path}"
+        },
+        {
+            "type": "monitor",
+            "key": "{#90}┃ {##FF5370}󰹑 Asus PG27AQDM",
+            "format": "{$1}{width}x{height} @ {refresh-rate}Hz {#2}({inch}\")"
+        },
+        {
+            "type": "custom",
+            "format": "{#90}┗━━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"
+        },
+        "break",
+        {
+            "type": "custom",
+            "format": "{#90}┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓"
+        },
+        {
+            "type": "custom",
+            "key": "{#90}┃ {#black}████{#red}████{#green}████{#yellow}████{#blue}████{#magenta}████{#cyan}████{#white}████{#90} ┃"
+        },
+        {
+            "type": "custom",
+            "key": "{#90}┃ {#light_black}████{#light_red}████{#light_green}████{#light_yellow}████{#light_blue}████{#light_magenta}████{#light_cyan}████{#light_white}████{#90} ┃"
+        },
+        {
+            "type": "custom",
+            "format": "{#90}┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"
+        }
+    ]
 }
